@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>ATM</title>
+</head>
+<body>
+<center>
+    <h1>your balance is {{balance}} </h1>
+    <form action="" method="POST" id="atm">
+    <input type="number" name="amount" id="amt">
+    <input type="submit"  value="withdraw" onclick="return validate(this)">
+    <input type="submit" value="deposit" onclick="return validate(this)">
+</form>
+</center>
+<script>
+ function validate(button){
+    var a=document.getElementById("amt").value;
+    if(a<0){
+        alert("negetive not allowed");
+        return false;
+    }
+    if(a===0){
+        alert("zero not allowed");
+        return false;
+    }
+    
+   
+     if(button.value==="withdraw" && a>5000){
+            alert("amt withdraw cant be more than 5000");
+            return false;
+               
+    }
+    if(button.value==="deposit" && a>10000){
+            alert("amt deposit cant be more than 10000");
+            return false;
+               
+    }else {
+        return true;
+    }
+    
+ }
+    
+ 
+</script>
+</body>
+
+</html>
